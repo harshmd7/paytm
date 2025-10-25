@@ -61,7 +61,10 @@ router.post("/login", async (req, res) => {
 
     const userData = {
       id: existingUser._id,
+      firstname: existingUser.firstname,
+      lastname: existingUser.lastname,
       email: existingUser.email,
+      token,
     };
 
     res.header("Authorization", `Bearer ${token}`).json({ token, user: userData });
